@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEON TOPUP</title>
+
+  <style>
+    body {
+      background: #101020;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 { color: #00ffd5; }
+
+    .card {
+      background: #22223a;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 15px;
+    }
+
+    select, button {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      margin: 8px;
+    }
+
+    button {
+      background: #00ffd5;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>NEON TOPUP 🎮</h1>
+  <p>Top-up game favoritmu!</p>
+
+  <div class="card">
+    <h2>Mobile Legends</h2>
+    <p>Pilih nominal diamond:</p>
+
+    <select id="diamond">
+      <option value="5000">86 Diamond - Rp5.000</option>
+      <option value="10000">172 Diamond - Rp10.000</option>
+      <option value="20000">344 Diamond - Rp20.000</option>
+    </select>
+
+    <br>
+
+    <button onclick="pesan()">Pesan Sekarang</button>
+
+    <p id="hasil"></p>
+  </div>
+
+  <script>
+    function pesan() {
+      const pilihan = document.getElementById("diamond");
+      const harga = pilihan.value;
+      const nominal = pilihan.options[pilihan.selectedIndex].text;
+
+      document.getElementById("hasil").innerText =
+        "Pilihan: " + nominal +
+        ". Ini masih simulasi, belum ada pembayaran.";
+    }
+  </script>
+</body>
+</html>
